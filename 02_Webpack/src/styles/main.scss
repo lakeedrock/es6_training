@@ -1,0 +1,11 @@
+$bg: lightblue;
+$margin: 0 auto;
+
+body {
+  background: $bg;
+}
+
+img {
+  margin: $margin;
+  display: block;
+}
