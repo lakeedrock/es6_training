@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+<script
+        type="text/babel"
+        src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+></script>
+<script type="text/javascript">
+
+    for (let letter of 'Javascript'){
+        console.log(letter);
+    }
+
+    var langs = ['JavaScript', 'Node', 'React'];
+    for(let language of langs){
+        console.log(language);
+    }
+
+    var topics = new Map();
+    topics.set("HTML","/class/html");
+    topics.set("CSS","/class/css");
+    topics.set("JavaScript","/class/js");
+    topics.set("NODE","/class/node");
+
+    for(let topic of topics){
+        console.log(topic);
+    }
+
+    for(let topic of topics.keys()){
+        console.log(topic, "is the course name");
+    }
+
+    for(let topic of topics.values()){
+        console.log("The course description can be found at ",topic);
+    }
+
+    for(let courses of topics.entries()){
+        console.log(courses);
+    }
+
+</script>
+</body>
+</html>
