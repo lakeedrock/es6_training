@@ -11,14 +11,15 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
     ></script>
     <script type="text/javascript">
-      let print = function (firstName, priceTag) {
+      let print = function (firstName, priceTag, discount) {
         console.log(`
         Hello ${firstName}
         Thank you for your payment of $${priceTag}
+        You have got ${discount}% for your purchase.
         `);
       };
 
-      print("Lakshan", 250);
+      print("Lakshan", 250 , 20);
     </script>
   </body>
 </html>
