@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      section > div {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        float: left;
+        background-color: red;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ES6 Training</h1>
+    <h4>var let const</h4>
+    <hr />
+    <header>
+      <h1>Click on a box</h1>
+    </header>
+    <section></section>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      for (let index = 1; index <= 45; index++) {
+        // for (var index = 0; index < 45; index++)  will apply #45 for all indexs
+        // for (let index = 0; index < 45; index++) using let it could fix easily
+        var div = document.createElement("div");
+        div.onclick = function () {
+          alert("You have clicked on the box #" + index);
+        };
+        document.getElementsByTagName("section")[0].appendChild(div);
+      }
+    </script>
+  </body>
+</html>

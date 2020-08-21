@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      const age = 31;
+      //age = 32;
+      console.log(age); // age = 32; Trigger an error modifing a constant
+
+      const freezingTemp = 0;
+      let coldEnough = function (degree) {
+        if (degree > freezingTemp) {
+          return degree + " is above freezing temparature";
+        } else {
+          return degree + " is below freezing temparature";
+        }
+      };
+
+      const temp = [29, -10, 0, -8, 5, -22, 33];
+      temp.forEach((degree) => {
+        console.log(coldEnough(degree));
+      });
+    </script>
+  </body>
+</html>
