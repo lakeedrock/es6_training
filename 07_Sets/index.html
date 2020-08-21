@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+<script
+        type="text/babel"
+        src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+></script>
+<script type="text/javascript">
+    var books = new Set();
+    books.add("Pride and Prejudice");
+    books.add("War and Peace")
+    .add("Oliver Twist");
+
+    console.log(books);
+
+    console.log("How many books ? ", books.size);
+    console.log("Has Oliver Twist ? ", books.has("Oliver Twist"));
+    books.delete("Oliver Twist");
+    console.log("Still has Oliver Twist ? ", books.has("Oliver Twist"));
+
+    var data = [1,2,3,4,3,2,2,3,1,5,6,7,9,5,6,4,3,7,8,3,8];
+    var set = new Set(data);
+    console.log("Data length : ", data.length);
+    console.log("Set length : ", set.size); //Removes duplicates and keep unique values
+
+</script>
+</body>
+</html>
