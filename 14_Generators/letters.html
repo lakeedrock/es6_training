@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.4/polyfill.js"
+    ></script>
+    <script type="text/javascript">
+      function* eachLetter(arr) {
+        for (let index = 0; index < arr.length; index++) {
+          yield arr[index];
+        }
+      }
+
+      var letters = eachLetter(["a", "b", "c", "d", "e", "f", "g"]);
+
+      var abc = setInterval(() => {
+        var letter = letters.next();
+        if (letter.done) {
+          clearInterval(abc);
+          console.log("I know the ABC !!!");
+        } else {
+          console.log(letter.value);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

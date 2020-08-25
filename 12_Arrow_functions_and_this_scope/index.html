@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      // Will trigger error -- Undefined
+      var person = {
+        first: "Sam",
+        actions: ["Bike", "Hike", "Ski", "Surf"],
+        printActions: function () {
+          this.actions.forEach(function (action) {
+            var str = this.first + " likes to " + action;
+            console.log(str);
+          });
+        },
+      };
+
+      // 1st method to solve this
+
+      var personA = {
+        first: "Doug",
+        actions: ["Bike", "Hike", "Ski", "Surf"],
+        printActions: function () {
+          var _this = this;
+          this.actions.forEach(function (action) {
+            var str = _this.first + " likes to " + action;
+            console.log(str);
+          });
+        },
+      };
+
+      // 2nd method to solve this
+
+      var personB = {
+        first: "Charlie",
+        actions: ["Bike", "Hike", "Ski", "Surf"],
+        printActions: function () {
+          this.actions.forEach(
+            function (action) {
+              var str = this.first + " likes to " + action;
+              console.log(str);
+            }.bind(this)
+          );
+        },
+      };
+
+      // Using arrow functions
+
+      var personC = {
+        first: "Jhonny",
+        actions: ["Bike", "Hike", "Ski", "Surf"],
+        printActions: function () {
+          this.actions.forEach((action) => {
+            var str = this.first + " likes to " + action;
+            console.log(str);
+          });
+        },
+      };
+
+      person.printActions();
+      personA.printActions();
+      personB.printActions();
+      personC.printActions();
+    </script>
+  </body>
+</html>

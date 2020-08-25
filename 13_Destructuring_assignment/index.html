@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      //With Arrays
+      var [first, , , fourth, , , seventh] = [
+        "Colombo",
+        "Negombo",
+        "Kurunegala",
+        "Kandy",
+        "Galle",
+        "Anuradapura",
+        "Trincomalee",
+      ];
+
+      console.log(first, fourth, seventh);
+
+      //With objects
+      var { title, price } = {
+        title: "club Sanwitch",
+        price: "$7",
+        description: "Todays' Special Sandwitch",
+        ingredients: [
+          "Toasted Bread",
+          "Pork Ham",
+          "Egg",
+          "Cucumber",
+          "Tomatoes",
+          "Salad Leaves",
+          "Pickle",
+          "Cheese",
+        ],
+      };
+
+      console.log(title, price);
+
+      // By Passing object to a function
+
+      var vacation = {
+        destination: "Dubai",
+        travellers: 2,
+        activity: "Desert Safari",
+        cost: 4000,
+      };
+
+      var vacationMarketing = ({ destination, activity }) => {
+        return `Visit ${destination} and do ${activity}`;
+      };
+
+      console.log(vacationMarketing(vacation));
+    </script>
+  </body>
+</html>
