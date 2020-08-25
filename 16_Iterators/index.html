@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      var title = "ES6";
+      console.log(typeof title[Symbol.iterator]);
+
+      var iterateIt = title[Symbol.iterator]();
+      console.log(iterateIt.next());
+      console.log(iterateIt.next());
+      console.log(iterateIt.next());
+      console.log(iterateIt.next());
+
+      var tableReady = (arr) => {
+        var nextIndex = 0;
+        return {
+          next() {
+            if (nextIndex < arr.length) {
+              return { value: arr.shift(), done: false };
+            } else {
+              return { done: true };
+            }
+          },
+        };
+      };
+
+      var waitingList = [
+        "Sarah",
+        "Micheal",
+        "Tony",
+        "Abdul",
+        "Nimal",
+        "Vikram",
+      ];
+
+      var iterateList = tableReady(waitingList);
+      do {
+        listItem = iterateList.next();
+        if (listItem.done == true) {
+          console.log(`Are all bookings complete ? ${listItem.done}`);
+        } else {
+          console.log(`${listItem.value}, your table is ready !`);
+        }
+      } while (listItem.done == false);
+    </script>
+  </body>
+</html>
