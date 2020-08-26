@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      const delay = (seconds) => {
+        return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+      };
+
+      const countToFive = async () => {
+        console.log("Zero Seconds");
+        await delay(1);
+        console.log("One Seconds");
+        await delay(2);
+        console.log("Two Seconds");
+        await delay(5);
+        console.log("Five Seconds");
+      };
+
+      countToFive();
+    </script>
+  </body>
+</html>
