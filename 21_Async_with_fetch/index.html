@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      // Method one
+      //   const githubRequest = async (loginName) => {
+      //     try {
+      //       //bradtraversy
+      //       var response = await fetch(
+      //         `https://api.github.com/users/${loginName}/followers`
+      //       );
+      //       var json = await response.json();
+      //       var followersList = json.map((user) => user.login);
+      //       console.log(followersList);
+      //     } catch (error) {
+      //       console.log("Data did not load", error);
+      //     }
+      //   };
+
+      //   githubRequest("eveporcello");
+
+      //Method Two
+
+      (async (loginName) => {
+        try {
+          //bradtraversy
+          var response = await fetch(
+            `https://api.github.com/users/${loginName}/followers`
+          );
+          var json = await response.json();
+          var followersList = json.map((user) => user.login);
+          console.log(followersList);
+        } catch (error) {
+          console.log("Data did not load", error);
+        }
+      })("eveporcello");
+    </script>
+  </body>
+</html>
