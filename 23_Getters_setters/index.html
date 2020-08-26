@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      type="text/babel"
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"
+    ></script>
+    <script type="text/javascript">
+      // ================== Object ===================
+      var attendance = {
+        _list: [],
+        set addName(name) {
+          this._list.push(name);
+        },
+        get list() {
+          return this._list.join(", ");
+        },
+      };
+
+      attendance.addName = "Lakshan";
+      console.log("List getter : ", attendance.list);
+      console.log("Underscore list (Prop)", attendance._list);
+
+      attendance.addName = "Sathya";
+      attendance.addName = "Linari";
+      console.log(attendance.list);
+
+      //================== Class =====================
+
+      class Hike {
+        constructor(distance, pace) {
+          this.distance = distance;
+          this.pace = pace;
+        }
+
+        get lengthInHours() {
+          return `${this.calcLength()} hours`;
+        }
+
+        calcLength() {
+          return this.distance / this.pace;
+        }
+      }
+
+      const mountAlphs = new Hike(10, 2);
+      console.log(mountAlphs.lengthInHours);
+    </script>
+  </body>
+</html>
