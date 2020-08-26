@@ -25,6 +25,15 @@
 
       const coolSkiVan = new Vehicle("cool ski van", 4);
       coolSkiVan.describeYourself();
+
+      class SemiTruck extends Vehicle {
+        constructor() {
+          super("cool semi truck", 18);
+        }
+      }
+
+      const semiTruck = new SemiTruck();
+      semiTruck.describeYourself();
     </script>
   </body>
 </html>
